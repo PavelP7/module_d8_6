@@ -1,0 +1,17 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+Post
+{% endblock title %}
+
+{% block content %}
+   <h1>{{ post.title|censor }}</h1>
+   <tr align="left">
+     <td> <em>Дата публикации:</em> </td>
+     <td> <em>{{ post.datetime_in|date:'d.m.Y' }}</em> </td>
+   <tr>
+   <hr>
+   <p align="left"> <font size="5">{{ post.text|censor }} </font></pa>
+{% endblock content %}
